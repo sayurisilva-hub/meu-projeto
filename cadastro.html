@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>Cadastrar Local</title>
+</head>
+<body>
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a href="locais.html">Meus Locais</a>
+    <a href="cadastro.html" class="ativo">Cadastrar</a>
+  </nav>
+
+  <main class="container">
+    <h2>📍 Cadastrar Novo Local</h2>
+    
+    <form id="form-local" class="formulario">
+      <label>
+        Nome do Local:
+        <input type="text" id="nome" required>
+      </label>
+
+      <label>
+        Descrição:
+        <textarea id="descricao" rows="4" required></textarea>
+      </label>
+
+      <label>
+        Localização:
+        <div class="grupo-botoes">
+          <button type="button" id="btn-gps" class="btn-pequeno">📍 Usar minha localização</button>
+        </div>
+        <input type="text" id="coordenadas" placeholder="Latitude, Longitude" readonly>
+      </label>
+
+      <label>
+        Foto:
+        <input type="file" id="foto" accept="image/*" capture="environment">
+        <div id="preview-container">
+          <img id="preview-foto" class="preview" alt="Pré-visualização">
+        </div>
+      </label>
+
+      <label>
+        <input type="checkbox" id="favorito"> Marcar como favorito
+      </label>
+
+      <button type="submit" class="btn">💾 Salvar Local</button>
+    </form>
+  </main>
+
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
